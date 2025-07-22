@@ -115,3 +115,53 @@ else:
     print("word does not exist.")
 
 print(saying)
+
+#splitting strings and paragraphs
+sentence_2 = "You have to die a few times before you can really live."
+
+print(sentence_2.split()) #removes spaces 
+print(sentence_2.split("a")) #removes a's
+print(sentence_2.split(" ", 2)) #creates a list with 3 items, first two words (2) and then the rest of the sentence
+print(sentence_2.rsplit(" ", 2)) #does the same as above but starts spliting from the end
+print(sentence_2.partition("few")) #creates a list with 3 items, 1st: left from word "few", 2nd: "few", 3rd: right from "few"
+print(sentence_2.rpartition("r")) #creates a list with 3 items, 1st: left from letter "r", 2nd: "r", 3rd: right from "r"
+
+paragraph_new = """
+Some lose all mind and become soul, insane.
+some lose all soul and become mind, intellectual.
+some lose both and become accepted.
+"""
+
+print(paragraph_new)
+print(paragraph_new.splitlines()) #creates a list with each line being an element
+
+#program that finds a word in a text and replaces it with its capital letters
+poem = """There's a bluebird in my heart that
+wants to get out
+but I'm too tough for him,
+I say, 
+stay down, do you want to mess me up?
+you want to screw up the works?
+you want to blow my book sales in Europe?
+"""
+
+
+while True: 
+    word_input = input("Enter a word: ")
+    word_input.split()
+
+    if word_input.isalpha():
+        word_input = word_input.lower()
+        break
+    else:
+        print("Only characters please!")
+
+poem_lowered = poem.lower()
+
+poem_lines = poem_lowered.splitlines() #splits the paragraph into lines and saves them into a list
+print(poem_lines)
+
+for pos in range(len(poem_lines)):
+    if poem_lines[pos].find(word_input) != -1:
+        print("Line " + str(pos) + ":" + poem_lines[pos].replace(word_input, word_input.upper()))
+        print(poem_lines[pos].replace(word_input, word_input.upper()))
